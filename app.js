@@ -131,15 +131,43 @@ function askUserForEngineerInfo() {
 
 // Ask user for intern info
 function askUserForInternInfo() {
-  return inquirer
+return inquirer
     .prompt([
       {
-        message: "Name",
+        message: "What is your name?",
         name: "name",
         type: "input",
       },
+
+      {
+        message: "What is your Id?",
+        name: "id",
+        type: "input",
+      },
+
+      {
+        message: "What is your Email?",
+        name: "email",
+        type: "input",
+      },
+
+      {
+        message: "What is your School?",
+        name: "school",
+        type: "input",
+      },
     ])
-    .then((response) => {});
+    .then((response) => {
+      const newIntern = new Intern(
+        response.name,
+        response.id,
+        response.email,
+        response.school
+      );
+      employeeArray.push(newIntern);
+
+      askUserForEmployeeType();
+    });
 }
 
 function createHtmlContent() {
