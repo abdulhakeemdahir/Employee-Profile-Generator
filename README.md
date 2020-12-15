@@ -30,7 +30,7 @@ Please follow the installation process below:
 ```
 
 Respository:
-https://github.com/abdulhakeemdahir/ReadMe-Generator-Application
+https://github.com/abdulhakeemdahir/Employee-Template-Generator
 
 ## Usage
 
