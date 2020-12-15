@@ -174,7 +174,7 @@ function askUserForInternInfo() {
 
 function createHtmlContent() {
   const htmlContent = render(employeeArray);
-  fs.writeFileSync("testoutput.html", htmlContent);
+  fs.writeFileSync("index.html", htmlContent);
 }
 
 askUserForManagerInfo();
