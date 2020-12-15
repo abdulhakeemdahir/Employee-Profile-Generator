@@ -67,7 +67,16 @@ function askUserForEmployeeType() {
       ],
     },
   ]).then((response) => {
-      
+      if(response.employee === "manager"){
+        askUserForManagerInfo();
+      }
+      else if(response.employee === "engineer"){
+        askUserForEngineerInfo();
+      }
+      else if(response.employee === "intern"){
+        askUserForInternInfo();
+      }
+      else return;
   });
 }
 }
