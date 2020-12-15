@@ -175,7 +175,7 @@ function askUserForInternInfo() {
 //Creating the html output
 function createHtmlContent() {
   const htmlContent = render(employeeArray);
-  fs.writeFileSync("testindex.html", htmlContent);
+  fs.writeFileSync("index.html", htmlContent);
 }
 
 //Initializing App
