@@ -72,6 +72,8 @@ function askUserForEmployeeType() {
           "engineer",
           new inquirer.Separator(),
           "intern",
+          new inquirer.Separator(),
+          "exit",
         ],
       },
     ])
@@ -82,7 +84,7 @@ function askUserForEmployeeType() {
         askUserForEngineerInfo();
       } else if (response.employee === "intern") {
         askUserForInternInfo();
-      } else {
+      } else if (response.employee === "exit") {
         createHtmlContent();
       }
     });
@@ -131,7 +133,7 @@ function askUserForEngineerInfo() {
 
 // Ask user for intern info
 function askUserForInternInfo() {
-return inquirer
+  return inquirer
     .prompt([
       {
         message: "What is your name?",
@@ -172,7 +174,7 @@ return inquirer
 
 function createHtmlContent() {
   const htmlContent = render(employeeArray);
-  writeToFile("output.html", htmlContent);
+  fs.writeFileSync("testoutput.html", htmlContent);
 }
 
 askUserForManagerInfo();
