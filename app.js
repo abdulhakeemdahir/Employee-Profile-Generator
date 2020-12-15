@@ -55,9 +55,16 @@ function askUserForManagerInfo() {
 function askUserForEmployeeType() {
       return inquirer.prompt([
     {
-      message: "Name",
-      name: "name",
-      type: "input",
+      type: "list",
+      name: "employee",
+      message: "Add an employee type",
+      choices: [
+        "manager",
+        new inquirer.Separator(),
+        "engineer",
+        new inquirer.Separator(),
+        "intern",
+      ],
     },
   ]).then((response) => {
       
