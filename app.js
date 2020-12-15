@@ -18,95 +18,104 @@ const employeeArray = [];
 // Ask user for manager info
 
 function askUserForManagerInfo() {
-  return inquirer.prompt([
-    {
-      message: "What is your name?",
-      name: "name",
-      type: "input",
-    },
+  return inquirer
+    .prompt([
+      {
+        message: "What is your name?",
+        name: "name",
+        type: "input",
+      },
 
-    {
-      message: "What is your Id?",
-      name: "id",
-      type: "input",
-    },
+      {
+        message: "What is your Id?",
+        name: "id",
+        type: "input",
+      },
 
-    {
-      message: "What is your Email?",
-      name: "email",
-      type: "input",
-    },
+      {
+        message: "What is your Email?",
+        name: "email",
+        type: "input",
+      },
 
-    {
-      message: "What is your Phone Number?",
-      name: "phone",
-      type: "input",
-    },
-  ]).then((response) => {
-    const newManager = new Manager(response.name, response.id, response.email, response.phone);
-     employeeArray.push( newManager );
+      {
+        message: "What is your Phone Number?",
+        name: "phone",
+        type: "input",
+      },
+    ])
+    .then((response) => {
+      const newManager = new Manager(
+        response.name,
+        response.id,
+        response.email,
+        response.phone
+      );
+      employeeArray.push(newManager);
 
-     askUserForEmployeeType();
-  });
+      askUserForEmployeeType();
+    });
 }
 
 // Ask use for next employee type
 
 function askUserForEmployeeType() {
-      return inquirer.prompt([
-    {
-      type: "list",
-      name: "employee",
-      message: "Add an employee type",
-      choices: [
-        "manager",
-        new inquirer.Separator(),
-        "engineer",
-        new inquirer.Separator(),
-        "intern",
-      ],
-    },
-  ]).then((response) => {
-      if(response.employee === "manager"){
+  return inquirer
+    .prompt([
+      {
+        type: "list",
+        name: "employee",
+        message: "Add an employee type",
+        choices: [
+          "manager",
+          new inquirer.Separator(),
+          "engineer",
+          new inquirer.Separator(),
+          "intern",
+        ],
+      },
+    ])
+    .then((response) => {
+      if (response.employee === "manager") {
         askUserForManagerInfo();
-      }
-      else if(response.employee === "engineer"){
+      } else if (response.employee === "engineer") {
         askUserForEngineerInfo();
-      }
-      else if(response.employee === "intern"){
+      } else if (response.employee === "intern") {
         askUserForInternInfo();
+      } else {
+        createHtmlContent();
       }
-      else return;
-  });
-}
+    });
 }
 
 // Ask user for engineer info
 function askUserForEngineerInfo() {
-      return inquirer.prompt([
-    {
-      message: "Name",
-      name: "name",
-      type: "input",
-    },
-  ]).then((response) => {
-      
-  });
-}
+  return inquirer
+    .prompt([
+      {
+        message: "Name",
+        name: "name",
+        type: "input",
+      },
+    ])
+    .then((response) => {});
 }
 
 // Ask user for intern info
 function askUserForInternInfo() {
-      return inquirer.prompt([
-    {
-      message: "Name",
-      name: "name",
-      type: "input",
-    },
-  ]).then((response) => {
-      
-  });
+  return inquirer
+    .prompt([
+      {
+        message: "Name",
+        name: "name",
+        type: "input",
+      },
+    ])
+    .then((response) => {});
 }
+
+function createHtmlContent() {
+  const htmlContent = render(employeeArray);
 }
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
