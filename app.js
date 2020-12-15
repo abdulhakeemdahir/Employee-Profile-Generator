@@ -22,20 +22,71 @@ function askUserForManagerInfo() {
       name: "name",
       type: "input",
     },
+
+    {
+      message: "Id",
+      name: "id",
+      type: "input",
+    },
+
+    {
+      message: "Email",
+      name: "email",
+      type: "input",
+    },
+
+    {
+      message: "Phone",
+      name: "phone",
+      type: "input",
+    },
   ]).then((response) => {
-      
+    const newManager = new Manager(response.name, response.id, response.email, response.phone);
   });
 }
 
 // Ask use for next employee type
 
-function askUserForEmployeeInfo() {}
+function askUserForEmployeeInfo() {
+      return inquirer.prompt([
+    {
+      message: "Name",
+      name: "name",
+      type: "input",
+    },
+  ]).then((response) => {
+      
+  });
+}
+}
 
 // Ask user for engineer info
-function askUserForEngineerInfo() {}
+function askUserForEngineerInfo() {
+      return inquirer.prompt([
+    {
+      message: "Name",
+      name: "name",
+      type: "input",
+    },
+  ]).then((response) => {
+      
+  });
+}
+}
 
 // Ask user for intern info
-function askUserForInternInfo() {}
+function askUserForInternInfo() {
+      return inquirer.prompt([
+    {
+      message: "Name",
+      name: "name",
+      type: "input",
+    },
+  ]).then((response) => {
+      
+  });
+}
+}
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
 // generate and return a block of HTML including templated divs for each employee!
