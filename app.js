@@ -93,12 +93,40 @@ function askUserForEngineerInfo() {
   return inquirer
     .prompt([
       {
-        message: "Name",
+        message: "What is your name?",
         name: "name",
         type: "input",
       },
+
+      {
+        message: "What is your Id?",
+        name: "id",
+        type: "input",
+      },
+
+      {
+        message: "What is your Email?",
+        name: "email",
+        type: "input",
+      },
+
+      {
+        message: "What is your Github?",
+        name: "github",
+        type: "input",
+      },
     ])
-    .then((response) => {});
+    .then((response) => {
+      const newEngineer = new Engineer(
+        response.name,
+        response.id,
+        response.email,
+        response.github
+      );
+      employeeArray.push(newEngineer);
+
+      askUserForEmployeeType();
+    });
 }
 
 // Ask user for intern info
