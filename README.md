@@ -1,7 +1,8 @@
 # Employee-Template-Generator
 
-UW Homework 10
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+UW Homework 10
 
 ## Description
 
@@ -47,7 +48,7 @@ If you would like to contribute, please contact me and I will add you as a contr
 
 Below is video test of my working application
 
-[![image](assets/img/hw9.png)](https://youtu.be/8XbOkw5yGnk)
+[![image](assets/hw10.png)](https://youtu.be/8XbOkw5yGnk)
 
 ## Questions
 
